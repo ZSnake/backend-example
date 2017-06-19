@@ -14,7 +14,6 @@ exports.login = {
     handler: function(request, reply) {
       var password = String(SHA3(request.payload.password));
       user.find({username: request.payload.username, password: password}, function(err, user){
-          
           if(!err){
             if(user.length > 0){
               request.cookieAuth.set(user[0]);

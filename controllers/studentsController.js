@@ -19,6 +19,7 @@ exports.createStudent = {
     scope: ['admin']
   },
   handler: function(request, reply){
+    console.log(request.auth.credentials);
     var newStudent = new student({
       name: request.payload.name,
       account: request.payload.account

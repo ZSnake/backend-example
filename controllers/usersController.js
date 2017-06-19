@@ -3,10 +3,7 @@ var SHA3 = require("crypto-js/sha3");
 var boom = require('boom');
 
 exports.createUser = {
-    auth: {
-      mode:'try',
-      strategy:'session'
-    },
+    auth: false,
     handler: function(request, reply) {
       console.log(request.payload);
        var newUser = new user({
